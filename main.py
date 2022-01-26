@@ -219,6 +219,8 @@ class Main(object):
             model = InteractE(self.p, self.chequer_perm)
         elif self.p.model.lower() == 'complex':
             model = ComplEx(self.p)
+        elif  self.p.model.lower() == 'linearcomplex':
+            model = LinearComplEx(self.p)
         model.to(self.device)
         return model
 
