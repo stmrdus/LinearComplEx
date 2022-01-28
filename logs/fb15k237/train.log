@@ -1,0 +1,9 @@
+2022-01-28 14:15:01 INFO     Training the LinearComplEx model...
+2022-01-28 14:15:01 INFO     Number of training data points: 544230
+2022-01-28 14:15:01 INFO     [2908200, 94800, 2908200, 94800, 94800, 94800, 200, 200, 200, 200]
+2022-01-28 14:15:03 INFO     149689
+2022-01-28 14:15:03 INFO     Starting training...
+2022-01-28 14:15:26 INFO     1
+2022-01-28 14:15:26 INFO     0.0069458819925785065
+2022-01-28 14:15:26 INFO     Validation:
+2022-01-28 14:15:27 INFO     Number of data points: 35070
