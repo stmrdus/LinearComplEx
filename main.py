@@ -127,8 +127,10 @@ class Experiment:
         train_data_idxs = self.get_data_idxs(d.train_data)
         logging.info("Number of training data points: %d" % len(train_data_idxs))
 
-        if model_name.lower() == "linearcomplex":
-            model = LinearComplEx(d, self.ent_vec_dim, self.rel_vec_dim, **self.kwargs)
+        if model_name.lower() == "linearhyper":
+            model = LinearHypER(d, self.ent_vec_dim, self.rel_vec_dim, **self.kwargs)
+        else:
+            model = HypER(d, self.ent_vec_dim, self.rel_vec_dim, **self.kwargs)
 
         logging.info([value.numel() for value in model.parameters()])
 
@@ -180,11 +182,11 @@ class Experiment:
                     logging.info("Test:")
                     self.evaluate(model, d.test_data)
 
-# CUDA_VISIBLE_DEVICES=0 python main.py --algorithm LinearComplEx --dataset WN18RR
+# CUDA_VISIBLE_DEVICES=0 python main.py --algorithm LinearHypER --dataset WN18RR
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser()
-    parser.add_argument('--algorithm', type=str, default="LinearComplEx", nargs="?",
+    parser.add_argument('--algorithm', type=str, default="LinearHypER", nargs="?",
                         help='Which algorithm to use')
     parser.add_argument('--dataset', type=str, default="FB15k-237", nargs="?",
                         help='Which dataset to use: FB15k, FB15k-237, WN18 or WN18RR')
